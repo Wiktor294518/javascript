@@ -1,0 +1,58 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>System Biblioteczny</title>
+</head>
+<body>
+<header>
+    <h1>Witaj w Systemie Bibliotecznym</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index">Strona Główna</a></li>
+        <li><a href="readers">Czytelnicy</a></li>
+        <li><a href="books">Dostępne Książki</a></li>
+        <li><a href="loans">Wypożyczenia</a></li>
+        <li><a href="authors">Autorzy</a></li>
+    </ul>
+</nav>
+
+<section class="main-content">
+    <h2>Lista Wyporzyczeń</h2>
+    <a href="/add_loan" class="button">Dodaj</a>
+    <table>
+        <thead>
+        <tr>
+            <th>Imię i Nazwisko </th>
+            <th>Nazwa książki</th>
+            <th>Data wyporzyczenia</th>
+            <th>Data oddania</th>
+            <th>Akcje</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% Loans.forEach(loan => { %>
+            <tr>
+                <td><%= loan.Imie %></td>
+                <td><%= loan.Nazwa_ksiazki %></td>
+                <td><%= loan.DataW %></td>
+                <td><%= loan.DataO %></td>
+                <td>
+                    <a href="/loans/edit/<%= loan.Id_wpozyczenia %>" class="button">Edytuj</a>
+                    <a href="/loans/delete/<%= loan.Id_wpozyczenia %>" class="button" onclick="return confirm('Czy na pewno chcesz usunąć?')">Usuń</a>
+                    <a href="/loans/details/<%= loan.Id_wpozyczenia %>" class="button">Szczegóły</a>
+                </td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+</section>
+
+<footer>
+    <p>&copy; 2024 System Biblioteczny</p>
+</footer>
+</body>

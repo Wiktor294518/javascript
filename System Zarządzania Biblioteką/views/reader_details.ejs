@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css" type="text/css">
+    <title>System Biblioteczny - Szczegóły Autora</title>
+</head>
+<body>
+<header>
+    <h1>Szczegóły Autora</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="/index">Strona Główna</a></li>
+        <li><a href="/readers">Czytelnicy</a></li>
+        <li><a href="/books">Dostępne Książki</a></li>
+        <li><a href="/loans">Wypożyczenia</a></li>
+        <li><a href="/authors">Autorzy</a></li>
+    </ul>
+</nav>
+
+<section class="main-content">
+<h2>Informacje o Czytelniku</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><%= reader.Imie %></td>
+        <td><%= reader.Nazwisko %></td>
+        <td><%= reader.email %></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Historia Wypożyczeń Czytelnika</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Data Wypożyczenia</th>
+        <th>Data Oddania</th>
+        <th>Tytuł Książki</th>
+        <th>Autor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% loans.forEach(loan => { %>
+        <tr>
+            <td><%= loan.DataW %></td>
+            <td><%= loan.DataO %></td>
+            <td><%= loan.Nazwa_ksiazki %></td>
+            <td><%= loan.Autor %></td>
+        </tr>
+    <% }); %>
+    </tbody>
+</table>
+</section>
+
+<footer>
+    <p>&copy; 2024 System Biblioteczny</p>
+</footer>
+</body>
+</html>

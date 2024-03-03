@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css" type="text/css">
+    <title>System Biblioteczny</title>
+</head>
+<body>
+<header>
+    <h1>Witaj w Systemie Bibliotecznym</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="/index">Strona Główna</a></li>
+        <li><a href="/readers">Czytelnicy</a></li>
+        <li><a href="/books">Dostępne Książki</a></li>
+        <li><a href="/loans">Wypożyczenia</a></li>
+        <li><a href="/authors">Autorzy</a></li>
+    </ul>
+</nav>
+
+<section class="main-content">
+    <h2>Szczegóły Czytelnika</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><%= reader.Imie %></td>
+            <td><%= reader.Nazwisko %></td>
+            <td><%= reader.email %></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Wypożyczenia</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Nazwa</th>
+            <th>Autor</th>
+            <th>Gatunek</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= book.Nazwa_ksiazki %></td>
+                <td><%= book.Autor %></td>
+                <td><%= book.Gatunek %></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<footer>
+    <p>&copy; 2024 System Biblioteczny</p>
+</footer>
+</body>
+</html>

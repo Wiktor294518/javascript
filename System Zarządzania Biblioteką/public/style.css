@@ -1,0 +1,118 @@
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6ccb3;
+    color: #333;
+}
+
+header {
+    background-color: #593b2b;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #dcb191;
+    padding: 10px;
+    width: 200px;
+    float: left;
+}
+a.button {
+    display: inline-block;
+    background-color: #c77d3d; /* Kolor tła przycisku */
+    color: #fff; /* Kolor tekstu przycisku */
+    padding: 10px 20px; /* Wielkość wewnętrznego marginesu przycisku */
+    border-radius: 5px; /* Zaokrąglenie narożników przycisku */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+    background-color: #a9622d; /* Ciemniejszy odcień tła po najechaniu myszką */
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff; /* Kolor tła listy rozwijanej */
+    color: #333; /* Kolor tekstu listy rozwijanej */
+    font-size: 14px; /* Rozmiar czcionki */
+    cursor: pointer;
+}
+
+button {
+    display: inline-block;
+    background-color: #c77d3d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #593b2b;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #c77d3d;
+}
+
+.main-content {
+    padding: 20px;
+    margin-left: 220px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #dcb191;
+    padding: 10px;
+    text-align: left;
+}
+
+footer {
+    background-color: #593b2b;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    clear: both;
+}

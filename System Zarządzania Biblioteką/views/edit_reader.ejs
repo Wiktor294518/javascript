@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Edytuj Czytelnika</title>
+</head>
+<body>
+<header>
+    <h1>Edytuj Czytelnika</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index">Strona Główna</a></li>
+        <li><a href="readers">Czytelnicy</a></li>
+        <li><a href="books">Dostępne Książki</a></li>
+        <li><a href="loans">Wypożyczenia</a></li>
+        <li><a href="authors">Autorzy</a></li>
+    </ul>
+</nav>
+
+<section class="main-content">
+    <h2>Edytuj Czytelnika</h2>
+
+    <form action="/readers/edit/:readerId" method="post" >
+        <label for="first_name">Imię:</label>
+        <input type="text" id="first_name" name="first_name" pattern="[A-Za-z]+" title="Imię powinno zawierać tylko litery" required maxlength="10">
+
+        <label for="last_name">Nazwisko:</label>
+        <input type="text" id="last_name" name="last_name" pattern="[A-Za-z]+" title="Nazwisko powinno zawierać tylko litery" required maxlength="10">
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$" title="zły email" required>
+
+        <input type="hidden" name="readerId" value="<%= readerId %>">
+        <button type="submit" class="button">Zapisz zmiany</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 System Biblioteczny</p>
+</footer>
+</body>
+</html>

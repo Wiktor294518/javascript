@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>System Biblioteczny</title>
+</head>
+<body>
+    <header>
+        <h1>Witaj w Systemie Bibliotecznym</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index">Strona Główna</a></li>
+            <li><a href="readers">Czytelnicy</a></li>
+            <li><a href="books">Dostępne Książki</a></li>
+            <li><a href="loans">Wypożyczenia</a></li>
+            <li><a href="authors">Autorzy</a></li>
+        </ul>
+    </nav>
+
+    <section class="main-content">
+        <h2>Dostępne Książki</h2>
+        <a href="add_book" class="button">Dodaj</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tytuł</th>
+                    <th>Autor</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% books.forEach(book => { %>
+                <tr>
+                    <td><%= book.Nazwa_ksiazki %></td>
+                    <td><%= book.Autor %></td>
+                    <td>
+                        <a href="/books/edit/<%= book.id_ksiazki %>" class="button">Edytuj</a>
+                        <a href="/books/delete/<%= book.id_ksiazki %>" class="button">Usuń</a>
+                        <a href="/books/details/<%= book.id_ksiazki %>" class="button">Szczegóły</a>
+                    </td>
+                </tr>
+            <% }); %>
+            </tbody>
+        </table>
+    </section>
+     <footer>
+        <p>&copy; 2024 System Biblioteczny</p>
+    </footer>
+</body>

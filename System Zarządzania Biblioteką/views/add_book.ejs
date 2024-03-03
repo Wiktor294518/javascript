@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Dodaj Książkę</title>
+</head>
+<body>
+<header>
+    <h1>Dodaj Książkę</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index">Strona Główna</a></li>
+        <li><a href="readers">Czytelnicy</a></li>
+        <li><a href="books">Dostępne Książki</a></li>
+        <li><a href="loans">Wypożyczenia</a></li>
+        <li><a href="authors">Autorzy</a></li>
+    </ul>
+</nav>
+
+<section class="main-content">
+    <h2>Dodaj Książkę</h2>
+    <form action="/add_book" method="post" >
+        <label for="title">Tytuł:</label>
+        <input type="text" id="title" name="title"  required maxlength="30">
+
+        <label for="author">Autor:</label>
+        <select id="author" name="author" required>
+            <% authors.forEach(author => { %>
+                <option value="<%= author.Id %>"><%= author.Imie %> <%= author.Nazwisko %></option>
+            <% }); %>
+        </select>
+
+
+        <label for="genre">Gatunek:</label>
+        <select id="genre" name="genre" required>
+            <% genres.forEach(genre => { %>
+                <option value="<%= genre.Id_gatunku %>"><%= genre.Nazwa_gatunku %></option>
+            <% }); %>
+        </select>
+
+        <button type="submit" class="button">Zapisz zmiany</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 System Biblioteczny</p>
+</footer>
+</body>
+</html>

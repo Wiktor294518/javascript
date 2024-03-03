@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Szczegóły Książki</title>
+</head>
+<body>
+<header>
+    <h1>Szczegóły Książki</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="/index">Strona Główna</a></li>
+        <li><a href="/readers">Czytelnicy</a></li>
+        <li><a href="/books">Dostępne Książki</a></li>
+        <li><a href="/loans">Wypożyczenia</a></li>
+        <li><a href="/authors">Autorzy</a></li>
+    </ul>
+</nav>
+
+<section class="main-content">
+    <h2>Szczegóły Książki</h2>
+    <div>
+        <h3>Tytuł: <%= book.Nazwa_ksiazki %></h3>
+        <p>Autor: <%= book.Autor %></p>
+        <p>Gatunek: <%= book.Gatunek %></p>
+    </div>
+
+    <h2>Historia Wypożyczeń</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Data Wypożyczenia</th>
+            <th>Data Oddania</th>
+            <th>Czytelnik</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% loans.forEach(loan => { %>
+            <tr>
+                <td><%= loan.DataW %></td>
+                <td><%= loan.DataO %></td>
+                <td><%= loan.Imie %> <%= loan.Nazwisko %></td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+</section>
+
+<footer>
+    <p>&copy; 2024 System Biblioteczny</p>
+</footer>
+</body>
+</html>

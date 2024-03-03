@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css" type="text/css">
+    <title>System Biblioteczny</title>
+</head>
+<body>
+<header>
+    <h1>Witaj w Systemie Bibliotecznym</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index">Strona Główna</a></li>
+        <li><a href="readers">Czytelnicy</a></li>
+        <li><a href="books">Dostępne Książki</a></li>
+        <li><a href="loans">Wypożyczenia</a></li>
+        <li><a href="authors">Autorzy</a></li>
+    </ul>
+</nav>
+<section class="main-content">
+    <h2>Lista Autorów</h2>
+    <a href="add_author" class="button">Dodaj</a>
+
+    <table id="authorsTable">
+        <thead>
+        <tr>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Akcje</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% authors.forEach(author => { %>
+            <tr>
+                <td><%= author.Imie %></td>
+                <td><%= author.Nazwisko %></td>
+                <td>
+                    <a href="/authors/edit/<%= author.Id %>" class="button">Edytuj</a>
+                    <a href="/authors/delete/<%= author.Id %>" class="button" onclick="return confirm('Czy na pewno chcesz usunąć?')">Usuń</a>
+                    <a href="/authors/details/<%= author.Id %>" class="button">Szczegóły</a>
+                </td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+</section>
+<footer>
+    <p>&copy; 2024 System Biblioteczny</p>
+</footer>
+</body>
+</html>

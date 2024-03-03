@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Edytuj Wyporzyczenie</title>
+</head>
+<body>
+<header>
+    <h1>Edytuj Wyporzyczenie</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index">Strona Główna</a></li>
+        <li><a href="readers">Czytelnicy</a></li>
+        <li><a href="books">Dostępne Książki</a></li>
+        <li><a href="loans">Wypożyczenia</a></li>
+        <li><a href="authors">Autorzy</a></li>
+    </ul>
+</nav>
+
+<section class="main-content">
+    <h2>Edytuj Wyporzyczenie</h2>
+    <form action="/loans/edit/:loanId" method="post" >
+        <label for="reader">Czytelnik:</label>
+        <select id="readerId" name="readerId" required>
+            <% readers.forEach(reader => { %>
+                <option value="<%= reader.id_czytelnika %>"><%= reader.Imie %> <%= reader.Nazwisko %></option>
+            <% }); %>
+        </select>
+
+        <label for="book">Ksiazka:</label>
+        <select id="titleId" name="titleId" required>
+            <% books.forEach(book => { %>
+                <option value="<%= book.id_ksiazki %>"><%= book.Nazwa_ksiazki %></option>
+            <% }); %>
+        </select>
+
+        <label for="data_w">Data Wyporzyczenia:</label>
+        <input type="date" id="data_w" name="data_w" required>
+
+        <label for="data_o">Data Oddania:</label>
+        <input type="date" id="data_o" name="data_o">
+
+
+        <input type="hidden" name="loanId" value="<%= loanId %>">
+        <button type="submit" class="button">Zapisz zmiany</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 System Biblioteczny</p>
+</footer>
+</body>
+</html>
